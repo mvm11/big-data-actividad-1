@@ -36,7 +36,7 @@ Primero, se debe clonar el repositorio en la ubicación de su preferencia
 
 ```
 git clone https://github.com/mvm11/big-data-actividad-1
-cd [ubicación de tu preferencia]
+cd big-data-actividad-1
 ```
 
 ## 2. Configurar Docker Compose

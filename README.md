@@ -22,8 +22,8 @@ Para ejecutar este proyecto, necesitarás instalar:
 
 Puedes descargarlos e instalarlos desde los siguientes enlaces:
 
-[Python](https://www.python.org/downloads/)
-[Docker](https://www.docker.com/products/docker-desktop)
+- [Python](https://www.python.org/downloads/)
+- [Docker](https://www.docker.com/products/docker-desktop)
 
 
 ## Datos

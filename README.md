@@ -88,7 +88,7 @@ Finalmente, ejecutar el script de Python para descargar los datos y cargarlos en
 
 
 ```
-python script.py
+python main.py
 ```
 
 

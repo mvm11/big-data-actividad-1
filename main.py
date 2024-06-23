@@ -14,19 +14,24 @@ collection = db["diagnoses"]
 response = requests.get(url)
 data = response.json()
 
-# Asegurarse de que 'data' es una lista de diccionarios
-if isinstance(data, list) and all(isinstance(item, dict) for item in data):
+# Asegurarse de que 'data' contiene una lista de diccionarios bajo la clave 'rows'
+if "rows" in data and isinstance(data["rows"], list) and all(isinstance(item, dict) for item in data["rows"]):
+    print("Data is a list of dictionaries under the key 'rows'.")
     # Ingresar datos a MongoDB si la lista no está vacía
-    if data:
+    if data["rows"]:
         try:
-            result = collection.insert_many(data)
-            print(f'Data inserted with ids: {result.inserted_ids}')
+            result = collection.insert_many(data["rows"])
+            print("Data successfully inserted.")
+            # Imprimir los primeros cinco documentos de la colección
+            print("First five documents in the collection:")
+            for doc in collection.find().limit(5):
+                print(doc)
         except Exception as e:
             print(f'An error occurred: {e}')
     else:
         print("No data to insert. The list is empty.")
 else:
-    print("Data format is incorrect or not a list of dictionaries.")
+    print("Data format is incorrect or not a list of dictionaries under the key 'rows'.")
 
 # Cerrar la conexión a la base de datos
 client.close()

@@ -31,7 +31,7 @@ Se utilizó el dataset [healthcare_data](https://huggingface.co/datasets/Nicolyb
 
 ## Configuración del Proyecto
 
-1. Clonar el Repositorio
+## 1. Clonar el Repositorio
 Primero, clona el repositorio en la ubicación de tu preferencia
 
 ```
@@ -39,7 +39,7 @@ git clone https://github.com/mvm11/big-data-actividad-1
 cd [ubicación de tu preferencia]
 ```
 
-2. Configurar Docker Compose
+## 2. Configurar Docker Compose
 Se debe asegurar que el archivo docker-compose.yml esté en la raíz del proyecto y contenga la siguiente configuración:
 ```
 version: '3.8'
@@ -57,7 +57,7 @@ volumes:
   mongo-data:
 ```
 
-3. Crear y Activar un Entorno Virtual
+## 3. Crear y Activar un Entorno Virtual
 En la carpeta del proyecto, se debe crear y activar un entorno virtual:
 
 
@@ -70,18 +70,18 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-4. Instalar Dependencias
+## 4. Instalar Dependencias
 Instalar las dependencias necesarias ejecutando:
 pip install pymongo requests
 
 
-5. Iniciar Servicios con Docker Compose
+## 5. Iniciar Servicios con Docker Compose
 Antes de ejecutar el script de Python, se debe iniciar MongoDB utilizando Docker Compose:
 ```
 docker-compose up -d
 ```
 
-6. Ejecutar el Script de Python
+## 6. Ejecutar el Script de Python
 Finalmente, ejecutar el script de Python para descargar los datos y cargarlos en MongoDB:
 
 

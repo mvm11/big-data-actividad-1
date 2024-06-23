@@ -39,5 +39,71 @@ git clone https://github.com/mvm11/big-data-actividad-1
 cd [ubicación de tu preferencia]
 ```
 
+2. Configurar Docker Compose
+Se debe asegurar que el archivo docker-compose.yml esté en la raíz del proyecto y contenga la siguiente configuración:
+```
+version: '3.8'
+services:
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
+```
+
+3. Crear y Activar un Entorno Virtual
+En la carpeta del proyecto, se debe crear y activar un entorno virtual:
+
+
+```
+python -m venv venv
+# En Windows
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+venv\Scripts\activate
+# En Linux/Mac
+source venv/bin/activate
+```
+
+4. Instalar Dependencias
+Instalar las dependencias necesarias ejecutando:
+pip install pymongo requests
+
+
+5. Iniciar Servicios con Docker Compose
+Antes de ejecutar el script de Python, se debe iniciar MongoDB utilizando Docker Compose:
+```
+docker-compose up -d
+```
+
+6. Ejecutar el Script de Python
+Finalmente, ejecutar el script de Python para descargar los datos y cargarlos en MongoDB:
+
+
+```
+python script.py
+```
+
+
+## Cierre de los Servicios
+Para detener y remover los contenedores creados por Docker Compose, se puede ejecutar:
+
+```
+docker-compose down
+```
+
+
+
+
+
+
+
+
+
 
 
